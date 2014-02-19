@@ -24,8 +24,18 @@ If you want to have this project auto-starting every time the Raspberry Pi boots
 
 This Upstart script assumes this project is located at `/home/pi/muzzley/muzzcar`
 
+Also, keep in mind that the unix user that you'll use to run the app, must have write access to `/sys/class/gpio/*`.
+
 ## Running
 
 To run the program manually, run the following command:
 
     node muzzcar
+
+Once the app is running and successfully connects to [Muzzley](http://www.muzzley.com)'s servers, you'll see the Muzzley Activity information printed on your screen.
+
+    ...
+    activityId: 'abc123',
+    ...
+
+All you have to do now is to use that `activityId` to pair your iPhone or Android device (using the Muzzley mobile app) with the RC car. An instant later your smartphone will turn into a gamepad. _Ka-ching_!

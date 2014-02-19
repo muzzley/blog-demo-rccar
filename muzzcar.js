@@ -27,7 +27,7 @@ var playsound = function (){
   .on('format', function (format) {
     this.pipe(new Speaker(format)).on('close', function(){
       playingSound = false;
-      console.log('### Acabou Horn ###');
+      console.log('### Horn Finished ###');
     });
   });
 };
@@ -131,7 +131,7 @@ var blinkTimer  = null;
 
 var connectionOptions = config.connection;
 
-muzzley.connectApp(connectionOptions, function (activity) {
+muzzley.connectApp(connectionOptions, function (err, activity) {
   clearTimeout(tryToConnect);
 
   console.log('Connected to Muzzley. Activity details:');
